@@ -16,6 +16,8 @@ class Category(BaseModel):
 class Label(BaseModel):
     id: int
 
+    def __eq__(self, other):
+        return self.id == self.id
 
 class Attribute(BaseModel):
     labels: List[Label]
@@ -34,5 +36,6 @@ class Product(BaseModel):
 class Catalog(BaseModel):
     products: List[Product]
     attributes: List[Attribute]
+
 
 
